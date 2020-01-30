@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Clicker.cs" type="Script" id=1]
+
+[node name="Clicker" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ClickButton" type="Button" parent="."]
+margin_left = 359.0
+margin_top = 202.0
+margin_right = 693.0
+margin_bottom = 367.0
+text = "Click me you Mongrel"
+
+[node name="PowerDisplay" type="Label" parent="."]
+margin_left = 495.22
+margin_top = 133.09
+margin_right = 556.22
+margin_bottom = 158.09
+text = "$$$$$"
+align = 1
+valign = 1
+[connection signal="pressed" from="ClickButton" to="." method="_on_ClickButton_pressed"]
