@@ -1,25 +1,67 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Clicker.cs" type="Script" id=1]
+[ext_resource path="res://Art/Background.png" type="Texture" id=2]
+[ext_resource path="res://Art/GreenButton.png" type="Texture" id=3]
 
 [node name="Clicker" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.586
+anchor_bottom = 1.707
+margin_right = -0.0640259
+margin_bottom = -0.200073
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 360, 640 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 600.0
+margin_bottom = 1024.0
+rect_min_size = Vector2( 360, 640 )
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 0.098
+margin_bottom = -0.352005
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ClickButton" type="Button" parent="."]
-margin_left = 359.0
-margin_top = 202.0
-margin_right = 693.0
-margin_bottom = 367.0
-text = "Click me you Mongrel"
+margin_left = 50.0
+margin_top = 750.0
+margin_right = 562.0
+margin_bottom = 956.0
+icon = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="PowerDisplay" type="Label" parent="."]
-margin_left = 495.22
-margin_top = 133.09
-margin_right = 556.22
-margin_bottom = 158.09
-text = "$$$$$"
+[node name="ValueDisplay" type="Label" parent="."]
+margin_left = 200.0
+margin_top = 35.0
+margin_right = 400.0
+margin_bottom = 71.0
+text = "# Mana"
 align = 1
 valign = 1
+percent_visible = -0.2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchor_right = 1.0
+margin_left = 150.0
+margin_top = 120.0
+margin_right = -150.0
+margin_bottom = 170.0
 [connection signal="pressed" from="ClickButton" to="." method="_on_ClickButton_pressed"]
