@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Clicker.cs" type="Script" id=1]
 [ext_resource path="res://Art/Background.png" type="Texture" id=2]
-[ext_resource path="res://Art/GreenButton.png" type="Texture" id=3]
+[ext_resource path="res://Art/GreyButton.png" type="Texture" id=3]
 
 [node name="Clicker" type="Control"]
 anchor_right = 0.586
@@ -45,15 +45,85 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ValueDisplay" type="Label" parent="."]
-margin_left = 200.0
-margin_top = 35.0
-margin_right = 400.0
-margin_bottom = 71.0
+[node name="Label" type="Label" parent="ClickButton"]
+margin_left = 150.0
+margin_top = 75.0
+margin_right = 350.0
+margin_bottom = 125.0
+text = "Press Button to gain Mana!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuyCrystal" type="Button" parent="."]
+margin_left = 50.0
+margin_top = 500.0
+margin_right = 562.0
+margin_bottom = 706.0
+icon = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="BuyCrystal"]
+margin_left = 150.0
+margin_top = 75.0
+margin_right = 350.0
+margin_bottom = 125.0
+text = "Press Button to buy Crystal"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ManaDisplay" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 7.0
+margin_right = 208.0
+margin_bottom = 43.0
 text = "# Mana"
 align = 1
 valign = 1
 percent_visible = -0.2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxManaDisplay" type="Label" parent="."]
+margin_left = 200.0
+margin_top = 7.0
+margin_right = 400.0
+margin_bottom = 43.0
+text = "# Max Mana"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CrystalDisplay" type="Label" parent="."]
+margin_left = 10.0
+margin_top = 50.0
+margin_right = 210.0
+margin_bottom = 86.0
+text = "# Crystals"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MonstersSlain" type="Label" parent="."]
+margin_left = 393.0
+margin_top = 7.0
+margin_right = 593.0
+margin_bottom = 43.0
+text = "# Monsters slain"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -65,3 +135,4 @@ margin_top = 120.0
 margin_right = -150.0
 margin_bottom = 170.0
 [connection signal="pressed" from="ClickButton" to="." method="_on_ClickButton_pressed"]
+[connection signal="pressed" from="BuyCrystal" to="." method="_on_BuyCrystal_pressed"]
