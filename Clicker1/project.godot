@@ -19,6 +19,15 @@ config/name="Clicker1"
 run/main_scene="res://Clicker.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=600
+window/size/height=1024
+window/size/resizable=false
+window/size/borderless=true
+window/vsync/use_vsync=false
+window/handheld/orientation="portrait"
+
 [input]
 
 click={

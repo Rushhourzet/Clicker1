@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Clicker.cs" type="Script" id=1]
 [ext_resource path="res://Art/Background.png" type="Texture" id=2]
 [ext_resource path="res://Art/GreyButton.png" type="Texture" id=3]
+[ext_resource path="res://Art/GreyButton_pressed.png" type="Texture" id=4]
 
 [node name="Clicker" type="Control"]
 anchor_right = 0.586
 anchor_bottom = 1.707
-margin_right = -0.0640259
-margin_bottom = -0.200073
+margin_right = 248.4
+margin_bottom = -723.968
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 360, 640 )
@@ -17,30 +18,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="TextureRect" parent="."]
-margin_right = 600.0
-margin_bottom = 1024.0
-rect_min_size = Vector2( 360, 640 )
-texture = ExtResource( 2 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="UI" type="CanvasLayer" parent="."]
+layer = -5
 
-[node name="Panel" type="Panel" parent="Background"]
+[node name="Background" type="Sprite" parent="UI"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Panel" type="Panel" parent="UI/Background"]
 anchor_right = 1.0
 anchor_bottom = 0.098
-margin_bottom = -0.352005
+margin_bottom = -0.098
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ClickButton" type="Button" parent="."]
+[node name="ClickButton" type="TextureButton" parent="."]
 margin_left = 50.0
 margin_top = 750.0
 margin_right = 562.0
 margin_bottom = 956.0
-icon = ExtResource( 3 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -129,7 +128,6 @@ margin_bottom = 43.0
 text = "# Mana"
 align = 1
 valign = 1
-percent_visible = -0.2
 __meta__ = {
 "_edit_use_anchors_": false
 }
