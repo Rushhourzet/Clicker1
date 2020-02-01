@@ -50,7 +50,28 @@ margin_left = 150.0
 margin_top = 75.0
 margin_right = 350.0
 margin_bottom = 125.0
-text = "Press Button to gain Mana!"
+text = "Press Button to hit Monster!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClickButtonAll" type="Button" parent="."]
+margin_left = 45.24
+margin_top = 264.478
+margin_right = 245.24
+margin_bottom = 470.478
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ClickButtonAll"]
+margin_left = -5.08264
+margin_top = 73.6396
+margin_right = 194.917
+margin_bottom = 123.64
+text = "Press Button to hit Monster!"
 align = 1
 valign = 1
 __meta__ = {
@@ -72,6 +93,27 @@ margin_left = 150.0
 margin_top = 75.0
 margin_right = 350.0
 margin_bottom = 125.0
+text = "Press Button to buy Crystal"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuyCrystalAll" type="Button" parent="."]
+margin_left = 341.162
+margin_top = 265.802
+margin_right = 563.162
+margin_bottom = 471.802
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="BuyCrystalAll"]
+margin_left = 13.9626
+margin_top = 77.7207
+margin_right = 213.963
+margin_bottom = 127.721
 text = "Press Button to buy Crystal"
 align = 1
 valign = 1
@@ -116,6 +158,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CrystalCostDisplay" type="Label" parent="."]
+margin_left = 200.0
+margin_top = 50.0
+margin_right = 400.0
+margin_bottom = 86.0
+text = "# Crystals"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="MonstersSlain" type="Label" parent="."]
 margin_left = 393.0
 margin_top = 7.0
@@ -128,11 +182,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="MonsterMaxHealth" type="Label" parent="."]
+margin_left = 393.0
+margin_top = 50.0
+margin_right = 593.0
+margin_bottom = 86.0
+text = "# Monster Max HP"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MonsterHPBar" type="ProgressBar" parent="."]
 anchor_right = 1.0
 margin_left = 150.0
 margin_top = 120.0
 margin_right = -150.0
 margin_bottom = 170.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="ClickButton" to="." method="_on_ClickButton_pressed"]
+[connection signal="pressed" from="ClickButtonAll" to="." method="_on_ClickButtonAll_pressed"]
 [connection signal="pressed" from="BuyCrystal" to="." method="_on_BuyCrystal_pressed"]
+[connection signal="pressed" from="BuyCrystalAll" to="." method="_on_BuyCrystalAll_pressed"]
